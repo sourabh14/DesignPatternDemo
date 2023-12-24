@@ -3,7 +3,7 @@ package com.example.DesignPatternDemo.StructuralPattern.AdapterPattern;
 public class AdapterDemo {
 
     /* Adapter is a special object that converts the interface of one object
-        so that another object can under- stand it. Adapter lets classes work together that
+        so that another object can understand it. Adapter lets classes work together that
         couldn’t otherwise because of incompatible interfaces.
 
         The Adapter pattern lets you create a middle-layer class that serves as a translator between

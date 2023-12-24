@@ -28,9 +28,6 @@ public class ChainOfResponsibilityDemo {
             for storing a reference to the next handler in the chain. In addition to processing a request,
             handlers pass the request further along the chain.
 
-            The pattern suggests that you link these handlers into a chain. Each linked handler has a field
-            for storing a reference to the next handler in the chain. In addition to processing a request,
-            handlers pass the request further along the chain.
          */
 
         // Eg - handling authentication requests

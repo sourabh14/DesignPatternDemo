@@ -1,9 +1,17 @@
 package com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern;
 
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard.GoldCreditCard;
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard.SilverCreditCard;
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Offer.GroceryOfferVisitor;
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Offer.MovieTicketOfferVisitor;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard.GoldCreditCard;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard.SilverCreditCard;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.Offer.GroceryOfferVisitor;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.Offer.MovieTicketOfferVisitor;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example2.Bank;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example2.Client;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example2.InsuranceMessagingVisitor;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example2.Resident;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example2.Visitor;
 
 public class VisitorPatternDemo {
     public void execute() {
@@ -18,7 +26,8 @@ public class VisitorPatternDemo {
                 to all necessary data contained within the object.
 
             Components:
-                Visitor - The dynamic operations that we want to add. The visitor interface declares a set of visit() methods that take concrete elements as arguments.
+                Visitor - The dynamic operations that we want to add. The visitor interface declares a set of visit()
+                    methods that take concrete elements as arguments.
                 Element - Element interface declares an accept() method that takes the Visitor interface as an argument.
 
 
@@ -77,5 +86,34 @@ public class VisitorPatternDemo {
                 that accept objects of relevant classes, leaving the rest empty. In our example, if movie tickets offer
                 doesn't applies to bronze card, then we can avoid using that visitor for that card.
          */
+
+        // Example 2:
+
+        /*
+            You are working for an insurance company, and the company has many type of clients -
+            resident, bank, company, restaurants.
+            To represent these clients, you created separate classes for them.
+
+            A new requirement comes: you have to add messaging functionality where, based on the type of client
+            a mail will be sent. For eg: Residents are sent medical insurance ad. If it is a bank, theft
+            insurance ad is sent. etc.
+
+            You decided to add sendMail method to the client class and override it in each subclasses.
+
+            Problem:
+                - This violates single responsibility and open/closed principle.
+                - Now these classes contain actual functionality that may break the code and they are open for modification
+                - What we need is to extract these behaviors outside of client class
+         */
+
+        Client resident = new Resident("Test resident", "23");
+        Client bank = new Bank("HDFC Mungeli branch");
+
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(resident);
+        clientList.add(bank);
+
+        Visitor insuranceMessagingVisitor = new InsuranceMessagingVisitor();
+        insuranceMessagingVisitor.sendInsuranceMails(clientList);
     }
 }

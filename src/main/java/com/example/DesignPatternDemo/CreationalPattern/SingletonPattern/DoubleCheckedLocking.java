@@ -8,15 +8,17 @@ public class DoubleCheckedLocking {
 
     public static DoubleCheckedLocking getInstance() {
         if (database == null) {
-            // To make thread safe
             synchronized (DoubleCheckedLocking.class) {
-                database = new DoubleCheckedLocking();
+                if (database == null) {
+                    database = new DoubleCheckedLocking();
+                }
             }
         }
         return database;
     }
 
-    /* Once an object is created synchronization is no longer useful because now obj
+    /*
+        Once an object is created synchronization is no longer useful because now obj
         will not be null and any sequence of operations will lead to consistent results.
 
         So we will only acquire lock on the getInstance() once, when the obj is null.

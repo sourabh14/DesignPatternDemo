@@ -1,16 +1,14 @@
 package com.example.DesignPatternDemo.StructuralPattern.CompositePattern;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.processing.SupportedSourceVersion;
-
 public class CompositeDemo {
     public void execute() {
         System.out.println("\n--Composite pattern demo--");
         
         /*
             Intro:
+                Composite is a structural design pattern that lets you compose objects into tree structures and then
+                work with these structures as if they were individual objects.
+
                 Compose objects into tree structures to represent part-whole hierarchies.
                 Composite lets clients treat individual objects and compositions of objects uniformly”:
                 This means that a client should be able to apply the same operations over both aggregation
@@ -40,7 +38,7 @@ public class CompositeDemo {
                     interface which declares a method for getting the total size.
 
                 Usage:
-                    - Use composite pattern wheen youo have to implement a tree-like object structure.
+                    - Use composite pattern when you have to implement a tree-like object structure.
                     - Use the pattern when you want the client code to treat both simple an complex elements uniformly.
 
          */

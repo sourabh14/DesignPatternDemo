@@ -55,10 +55,10 @@ public class MementoPatternDemo {
 
         /*
             Usage:
-                - Use the Memento pattern when you want to produce snap- shots of the object’s state to be able to
+                - Use the Memento pattern when you want to produce snapshots of the object’s state to be able to
                 restore a previous state of the object.
 
-                - Use the pattern when direct access to the object’s fields/get- ters/setters violates its encapsulation.
+                - Use the pattern when direct access to the object’s fields/getters/setters violates its encapsulation.
                     The Memento makes the object itself responsible for creating a snapshot of its state. No other
                     object can read the snapshot, making the original object’s state data safe and secure.
          */

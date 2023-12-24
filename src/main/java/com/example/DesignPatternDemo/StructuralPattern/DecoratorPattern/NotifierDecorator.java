@@ -7,9 +7,9 @@ public abstract class NotifierDecorator implements Notifier {
         this.notifier = notifier;
     }
 
-    @Override
-    public void send(String message) {
-        notifier.send(message);
-    }
+//    @Override
+//    public void send(String message) {
+//        notifier.send(message);
+//    }
 
 }

@@ -59,7 +59,48 @@ public class DecoratorDemo {
             2. Use the pattern when it’s awkward or not possible to extend an object’s behavior
             using inheritance.
 
+            Example:
 
+                I've recently used the decorator pattern in a web service which uses the following CommandProcessor interface:
+
+                public Command receive(Request request);
+                public Response execute(Command command);
+                public void respond(Response response);
+
+                Basically, the CommandProcessor receives a Request and creates the proper Command, executes the Command
+                and creates the appropriate Response, and sends the Response. When I wanted to add timing and log it,
+                I created a TimerDecorator that used an existing CommandProcessor as its component.
+
+                The TimerDecorator implements CommandProcessor interface, but just adds timing and then calls its target
+                , which is the real CommandProcessor. Something like this:
+
+                public class TimerDecorator implements CommandProcessor {
+                   private CommandProcessor target;
+                   private Timer timer;
+
+                   public TimerDecorator(CommandProcessor processor) {
+                      this.target = processor;
+                      this.timer = new Timer();
+                   }
+
+                   public Command receive(Request request) {
+                      this.timer.start();
+                      return this.target.receive(request);
+                   }
+
+                   public Response execute(Command command) {
+                      return this.target.execute(command);
+                   }
+
+                   public void respond(Response response) {
+                      this.target.response(response);
+                      this.timer.stop();
+                      // log timer
+                   }
+
+                }
+                So the real CommandProcessor is wrapped inside TimerDecorator, and I can treat TimerDecorator just
+                like the target CommandProcessor, but now timing logic has been added.
 
 
 

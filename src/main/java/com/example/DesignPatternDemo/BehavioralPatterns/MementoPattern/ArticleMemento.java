@@ -1,6 +1,6 @@
 package com.example.DesignPatternDemo.BehavioralPatterns.MementoPattern;
 
-// Memento class
+// Memento class - similar to Article class
 public class ArticleMemento {
     private int id;
     private String title;

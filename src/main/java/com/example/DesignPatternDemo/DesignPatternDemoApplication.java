@@ -20,11 +20,20 @@ import com.example.DesignPatternDemo.StructuralPattern.CompositePattern.Composit
 import com.example.DesignPatternDemo.StructuralPattern.DecoratorPattern.DecoratorDemo;
 import com.example.DesignPatternDemo.StructuralPattern.FlyweightPattern.FlyweightDemo;
 import com.example.DesignPatternDemo.StructuralPattern.ProxyPattern.ProxyDemo;
+import com.example.DesignPrincipleDemo.SOLIDPrinciples;
+import com.example.SOLIDprinciples.DependencyInversionPrincipleDemo;
+import com.example.SOLIDprinciples.InterfaceSegregationPrincipleDemo;
+import com.example.SOLIDprinciples.LiskovSubstitutionPrincipleDemo;
+import com.example.SOLIDprinciples.OpenClosedPrincipleDemo;
 
 public class DesignPatternDemoApplication {
 
 	public static void main(String[] args) {
-		System.out.println("Design Pattern Demo Project\n");
+		System.out.println("Design Principles Demo\n");
+
+		new SOLIDPrinciples().execute();
+
+		System.out.println("Design Pattern Demo\n");
 
 		new FactoryPatternDemo().execute();
 

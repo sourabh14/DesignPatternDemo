@@ -22,7 +22,9 @@ public class FacadeDemo {
             2. Use the Facade when you want to structure a subsystem into layers.
 
 
-            See example given in - https://www.baeldung.com/java-facade-pattern
+            Eg: DAO layer in application. We need few interaction of db layer. Also if there are any changes in db,
+            such as change from mysql to mongo, only changes required are in dao layer and not in service logic.
+            This introduces decoupling.
 
 
          */

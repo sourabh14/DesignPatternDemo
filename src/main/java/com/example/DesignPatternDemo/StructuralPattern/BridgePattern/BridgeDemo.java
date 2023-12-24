@@ -9,9 +9,9 @@ public class BridgeDemo {
 
         /*
             Intro:
-                Bridge pattern helps decouple the abstraction and implementation
-                by creating two separate class hierarchies, so that the two can vary
-                independently.
+                Bridge is a structural design pattern that lets you split a large class or a set of closely related
+                classes into two separate hierarchies—abstraction and implementation—which can be developed independently
+                of each other
 
                 The Bridge pattern is an application of the old advice, “prefer composition over inheritance”.
                 It becomes handy when you must subclass different times in ways that are orthogonal with one another.

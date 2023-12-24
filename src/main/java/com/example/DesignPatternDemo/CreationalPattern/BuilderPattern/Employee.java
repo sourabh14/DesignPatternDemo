@@ -12,19 +12,6 @@ public class Employee {
     public String department;
     public String bloodGroup;
 
-    // The above fields of user won't change in the future.
-    // Hence, we don't want to provide setters i.e. once the fields are set during constructor call, we
-    // don't want to change the object. It will be immutable.
-    // Also what happens when new fields get introduced.
-
-    // We don't want to overload constructors to accommodate various optional fields
-    // This is called telescoping constructors problem.
-
-    // Builder pattern is useful when
-    //      1. we don't want to lose immutability,
-    //      2. there's a possibility of new fields
-    //      3. we don't want to overload constructors.
-
     public Employee(EmployeeBuilder employeeBuilder) {
         this.id = employeeBuilder.id;
         this.firstName = employeeBuilder.firstName;

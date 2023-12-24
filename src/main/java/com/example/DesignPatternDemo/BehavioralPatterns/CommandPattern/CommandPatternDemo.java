@@ -55,8 +55,10 @@ public class CommandPatternDemo {
 
          */
 
-        TextFileCommandInvoker invoker = new TextFileCommandInvoker();
+
         TextFile textFile = new TextFile("File1");
+
+        TextFileCommandInvoker invoker = new TextFileCommandInvoker();
         OpenTextFileCommand openTextFileCommand = new OpenTextFileCommand(textFile);
         SaveTextFileCommand saveTextFileCommand = new SaveTextFileCommand(textFile);
 
@@ -66,8 +68,8 @@ public class CommandPatternDemo {
         System.out.println("");
 
         /*
-            Good software design is often based on the principle of sep- aration of concerns, which usually results in
-            breaking an app into layers. The most common example: a layer for the graphi- cal user interface and another
+            Good software design is often based on the principle of separation of concerns, which usually results in
+            breaking an app into layers. The most common example: a layer for the graphical user interface and another
             layer for the business logic. The GUI layer is responsible for rendering a beautiful picture on the screen,
             capturing any input and showing results of what the user and the app are doing. However, when it comes to
             doing something important, like calculating the trajectory of the moon or composing an annual report, the
@@ -86,9 +88,7 @@ public class CommandPatternDemo {
 
             Usage:
                 - Use the Command pattern when you want to parametrize objects with operations.
-
                 - Use the Command pattern when you want to queue operations, schedule their execution, or execute them remotely.
-
                 - Use the Command pattern when you want to implement reversible operations.
          */
 

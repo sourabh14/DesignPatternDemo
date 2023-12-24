@@ -50,7 +50,7 @@ public class IteratorPatternDemo {
                     - If a user is working with a for loop, they cannot modernize(add/remove) the Collection, whereas,
                     if they use the Java Iterator, they can simply update the Collection.
 
-                Java Iterator Methods
+                java.util.Iterator interface methods
                     - hasNext(): - returns true if there are more elements left in the iteration.
                     - next() - returns next element in the traversal
                     - remove() - remove the last element returned by the iterator

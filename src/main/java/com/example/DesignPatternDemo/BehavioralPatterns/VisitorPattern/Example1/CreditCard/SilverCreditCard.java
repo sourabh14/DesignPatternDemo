@@ -1,6 +1,6 @@
-package com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard;
+package com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard;
 
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Offer.OfferVisitor;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.Offer.OfferVisitor;
 
 public class SilverCreditCard implements CreditCard {
     @Override

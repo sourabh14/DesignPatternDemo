@@ -1,8 +1,8 @@
-package com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Offer;
+package com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.Offer;
 
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard.BronzeCreditCard;
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard.GoldCreditCard;
-import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.CreditCard.SilverCreditCard;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard.BronzeCreditCard;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard.GoldCreditCard;
+import com.example.DesignPatternDemo.BehavioralPatterns.VisitorPattern.Example1.CreditCard.SilverCreditCard;
 
 public class GroceryOfferVisitor implements OfferVisitor {
     @Override

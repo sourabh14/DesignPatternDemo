@@ -21,10 +21,6 @@ import com.example.DesignPatternDemo.StructuralPattern.DecoratorPattern.Decorato
 import com.example.DesignPatternDemo.StructuralPattern.FlyweightPattern.FlyweightDemo;
 import com.example.DesignPatternDemo.StructuralPattern.ProxyPattern.ProxyDemo;
 import com.example.DesignPrincipleDemo.SOLIDPrinciples;
-import com.example.SOLIDprinciples.DependencyInversionPrincipleDemo;
-import com.example.SOLIDprinciples.InterfaceSegregationPrincipleDemo;
-import com.example.SOLIDprinciples.LiskovSubstitutionPrincipleDemo;
-import com.example.SOLIDprinciples.OpenClosedPrincipleDemo;
 
 public class DesignPatternDemoApplication {
 

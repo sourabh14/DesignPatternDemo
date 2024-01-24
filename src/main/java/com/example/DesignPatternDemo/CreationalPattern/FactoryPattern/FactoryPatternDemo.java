@@ -47,7 +47,7 @@ public class FactoryPatternDemo {
         // Create shape based on type
         // ***** If a new shape is added then the client code (FactoryPatternDemo.java) won't change ******
         // Object creation logic is now
-        Shape shape = new ShapeFactory().createShape(shapeType);
+        Shape shape = ShapeFactory.createShape(shapeType);
 
         // Draw the shape
         shape.draw();

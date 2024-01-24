@@ -28,6 +28,11 @@ public class ChainOfResponsibilityDemo {
             for storing a reference to the next handler in the chain. In addition to processing a request,
             handlers pass the request further along the chain.
 
+            Usage:
+                -  Use the Chain of Responsibility pattern when your program is expected to process different kinds
+                    of requests in various ways, but the exact types of requests and their sequences are unknown
+                    beforehand.
+
          */
 
         // Eg - handling authentication requests

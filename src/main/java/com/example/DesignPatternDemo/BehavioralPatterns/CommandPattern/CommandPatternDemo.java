@@ -73,7 +73,7 @@ public class CommandPatternDemo {
             layer for the business logic. The GUI layer is responsible for rendering a beautiful picture on the screen,
             capturing any input and showing results of what the user and the app are doing. However, when it comes to
             doing something important, like calculating the trajectory of the moon or composing an annual report, the
-            GUI layer dele- gates the work to the underlying layer of business logic.
+            GUI layer delegates the work to the underlying layer of business logic.
 
             In the code it might look like this: a GUI object calls a method of a business logic object, passing it some
             arguments. This process is usually described as one object sending another a request.

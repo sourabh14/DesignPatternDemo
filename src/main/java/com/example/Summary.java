@@ -7,9 +7,10 @@ public class Summary {
             - provides object creation mechanisms.
 
         Factory :
+            - create objects without exposing the instantiation logic to the client.
+            - to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
             - provides an interface for creating objects in a superclass, but allows subclasses to alter the type of
                 objects that will be created.
-            - create objects without exposing the instantiation logic to the client.
             - Usage: when you don’t know beforehand the exact types and dependencies of the objects your code should work with.
             - Eg: ShapeFactory createShape()
 
@@ -21,7 +22,7 @@ public class Summary {
         Prototype :
             - lets you copy existing objects without making your code dependent on their classes.
             - Usage: Some fields might be private and not accessible from outside
-            - Eg: java.lang.Cloneable interface provides clone() method
+            - Eg: java.lang.Cloneable interface indicates a class implements clone() method
 
         Singleton :
             - lets you ensure that a class has only one instance, while providing a global access point to this instance.
@@ -35,8 +36,8 @@ public class Summary {
 
         Bridge:
             - allows you to separate the abstraction from the implementation, so that two can vary independently.
-            - prefer composition over inheritance
-            - Eg: Shape can have type and color: RedCircle, BlueCircle, RedSquare, BlueSquare etc..
+            - It follows the principle - "prefer composition over inheritance"
+            - Eg: Automobile can have engine type - ice, electric and driving mode - manual, automatic
 
         Adapter:
             - lets classes work together which have incompatible interfaces
@@ -58,7 +59,7 @@ public class Summary {
             - Eg CommandProcessor with method - receive(), execute(), respond(). Add TimerDecorator to it.
 
         Composite:
-            - compose objects into tree structures and then work with these structures as if they were individual objects
+            - The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies.
             - treat individual objects and compositions of objects uniformly
             - Eg: Calculate size of a directory structure, containing files and directories.
 
@@ -75,7 +76,7 @@ public class Summary {
 
         Strategy:
             - enables selecting an algorithm at runtime.
-            - We define multiple algorithms and let client pplication pass the algorithm to be used as a parameter
+            - We define multiple algorithms and let client application pass the algorithm to be used as a parameter
             - Eg: Collections.sort(). Based on the different implementations of Comparator interfaces, the Objects are
                 getting sorted in different ways. Collections.sort(col, Collections.reverseOrder());
             - Eg2: Applying different types of discount diwaliDiscount, newYearDiscount to Cart

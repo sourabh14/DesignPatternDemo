@@ -11,6 +11,7 @@ public class SOLIDPrinciples {
             When to apply SRP
                 - If you feel it is becoming hard to focus on specific aspects of program one at a time,
                     check if class can be divided.
+            Eg: Sale order and tax calculator
 
 
             Open/Closed Principle
@@ -20,11 +21,13 @@ public class SOLIDPrinciples {
                 - If a class is already developed, tested, reviewed and included in some framework or otherwise
                 used in an app then instead of changing the code directly, create a subclass and override parts
                 of original class
+                - Eg decorator pattern
 
             Liskov Substitution Principle
                 - Subclass should remain compatible with the behaviour of superclass.
                 - When extending a class, you should be able to pass objects of the subclass in place
                 of objects of the parent class without breaking client code
+                - Eg add method of subclass throws IllegalArgumentException in case of invalid input
 
             Interface Segregation Principle
                 - Clients shouldn't be forced to depend on methods they don't use
@@ -33,6 +36,8 @@ public class SOLIDPrinciples {
                     even clients that don't use changed methods
                 - Classes can implement only those interfaces which have methods that make sense for them.
                 pg - 63, 64
+                - Eg Ostrich is a type of bird, and we defined fly method() for Bird. But Ostrich don't fly.
+                    Create Flyable interface and make other Bird classes implement flyable interface.
 
              Dependency Inversion Principle
                 - Classes should depend on interface, rather than concrete classes.
@@ -40,7 +45,7 @@ public class SOLIDPrinciples {
                 - Low-level classes implement basic operations such as working with a disk, transferring data over a
                     network, connecting to a database, etc.
                 - High-level classes contain complex business logic that directs low-level classes to do something.
-
+                - Eg DAO layer
 
          */
     }

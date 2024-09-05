@@ -1,4 +1,4 @@
-package com.example.DesignPrincipleDemo;
+package com.example.DesignPrincipleDemo.UmlDiagram;
 
 public class UMLDiagram {
     /*

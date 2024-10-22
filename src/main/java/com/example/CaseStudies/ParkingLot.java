@@ -8,54 +8,97 @@ public class ParkingLot {
         available space. Upon checkout the user can pay a parking fee based on time spent.
 
     System Requirements:
-        - A parking lot should have multiple entry and exit points
-        - A parking lot has dedicated spots for 2 and 4 wheeler
-        - Customers can park their vehicle only in the vacant spots and based on their vehicle type
-        - A display board should show the number of spots available for each vehicle type
-        - Customers can get a parking ticket on check-in and pay a parking fee on exit.
-        - The parking fee should be based on the amount of time spent in parking lot
-            (10 Rs per hour for 2 vehicle and 20 Rs per hour for 4-vehicle ).
-        - The customers can pay with either cash, credit/debit card or UPI
+        - The parking lot should have multiple levels, each level with a certain number of parking spots.
+        - The parking lot should support different types of vehicles, such as cars, motorcycles, and trucks.
+        - Each parking spot should be able to accommodate a specific type of vehicle.
+        - The system should assign a parking spot to a vehicle upon entry and release it when the vehicle exits.
+        - The system should track the availability of parking spots and provide real-time information to customers.
+        - The system should handle multiple entry and exit points and support concurrent access.
 
     Users:
         - Parking attendant
         - Admin
 
-    Use cases:
-        - Add/Remove/Edit/Get for parking spot: Admin
-        - Add/Remove/Edit/Get for parking attendant: Admin
-        - Vehicle checkin: Attendant can check-in vehicle and give a parking ticket
-        - Get parking fee: Get parking fee based on checkin time
-        - Vehicle checkout: Checkout vehicle after receiving payment
+    System Interface:
+        - parkingLevel CRUD
+        - parkingSpot CRUD
+        - checkIn()
+        - checkOut()
+        - getParkingLotDetails()
 
-    Class diagram:
-        ParkingLot
-            -code: String
-            -parkingSpots: List<ParkingSpot>
+    Class diagram (mermaid):
 
-        ParkingSpot
-            -code: String
-            -vehicleType: VehicleType
-            -vacant: Boolean
+    classDiagram
+	class ParkingLot {
+		-id
+		-name
+		-parkingLevels
+		+parkVehicle()
+		+exitVehicle()
+	}
 
-        Vehicle
-            -number: String
-            -vehicleType: VehicleType
+	class ParkingLevel {
+		-id
+		-code
+		-parkingSpots
+		+getAvailableParkingSpots()
+	}
 
-        VehicleType
-            TWO_WHEELER
-            FOUR_WHEELER
+	class ParkingSpot {
+		-id
+		-code
+		-spotType
+		-parkingStatus
+		+reserveParkingSpot()
+		+releaseParkingSpot()
+	}
 
-        Ticket
-            -code: String
-            -parkingSpot: ParkingSpot
-            -vehicle: Vehicle
-            -checkinTime: Date
-            -parkingFeeCalculator: ParkingFeeCalculator
+	class ParkingStatus {
+		<<enumeration>>
+		VACANT
+		OCCUPIED
+	}
 
-        # Apply strategy pattern here
-       ParkingFeeCalculator -> Interface
-            +getParkingFee(): Double
+	class Vehicle {
+		-id
+		-licenseNumber
+		+getParkingTariff()
+	}
+
+	class TwoWheelerVehicle {
+	}
+
+	class FourWheelerVehicle {
+	}
+
+	class ParkingTicket {
+		-id
+		-vehicle
+		-parkingSpot
+		-checkinTime
+		-checkoutTime
+		-cost
+	}
+
+	class ParkingService {
+		+getParkingDisplay()
+		+checkIn()
+		+checkOut()
+	}
+
+	class PaymentService {
+		+calculateCharges()
+		+makePaymrnt()
+	}
+
+	ParkingLot *-- ParkingLevel
+	ParkingLevel *-- ParkingSpot
+	ParkingSpot --> ParkingStatus
+	Vehicle <|-- TwoWheelerVehicle
+	Vehicle <|-- FourWheelerVehicle
+	ParkingTicket --> Vehicle
+	ParkingTicket --> ParkingSpot
+
 
 
      */

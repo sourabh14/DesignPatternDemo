@@ -5,55 +5,80 @@ public class VendingMachine {
         Vending machine
 
             Description:
-                A vending machine is an automated machine that dispenses items such as food or drinks. A user can insert money and the machine will release items based on the selection.
+                A vending machine is an automated machine that dispenses items such as food or drinks. A user can
+                make payment and the machine will dispense the selected item through designated slot.
 
             System requirements:
-                - A user must be able to view the available items
-                - The vending machine contains a port where items can be ordered
-                - The port can be operated by a single user at a time
-                - The user should be able to add/enter money
-                - The user must be able to select multiple items based on their id
-                - The user should be given an error or a warning if the available balance is less than item ordered
+                Functional
+                    - Admin must be able to add/remove items and their inventory
+                    - A user must be able to view the available items
+                    - A port is display area operated by the user to add money and order items
+                    - The vending machine can contain multiple ports
+                    - The user should be able to add money through port
+                    - The user must be able to select multiple items based on their id
+                    - Money cannot be withdrawn from vending machine once it is credited
+                    - The user should be given an error or a warning if the available balance is less than item ordered
 
-            Users:
-                - Admin
-                - Users
+                Non-functional
+                    - System must be able to handle failures gracefully
+                    - System must be able to scale
+                    - System must be able to handle concurrent requests
 
-            Use cases:
-                - Add/Get/Update/Delete items in the vending machine: Admin
+            System interface:
+                - items CRUD: Admin
                 - Add/Remove inventory of items: Admin
                 - Get all available items along with their price, where inventory is greater than one: User
                 - Add balance (UPI transaction): User
                 - Get current balance: User
                 - Order item: User
 
-            Class diagram:
+            classDiagram
+                class VendingMachine {
+                    -id
+                    -code
+                    -amount
+                    -itemCodeToItem
+                    +addAmount()
+                    +createOrder()
+                }
 
-                VendingMachine
-                    - itemToInventory: Map<Item, Inventory>
-                    - currentBalance
+                class Item {
+                    -id
+                    -code
+                    -price
+                    -inventory
+                    -inventoryLedger
+                    +updateInventory()
+                    +updateInventoryLedger()
+                }
 
-                    + addBalance(amount): boolean
-                    + orderItem(item):
+                class InventoryLedger {
+                    -id
+                    -quantity
+                    -note
+                    -created
+                    -updated
+                }
 
-                Item
-                    - code
-                    - name
-                    - price
-                    - created
-                    - updated
+                class Order {
+                    -id
+                    -code
+                    -item
+                    -quantity
+                    -status
+                    -created
+                }
 
-                ItemInventory
-                    - itemId
-                    - inventory
-                    - created
-                    - updated
+                class OrderStatus {
+                    <<enumeration>>
+                    CREATED
+                    COMPLETE
+                }
 
-                Transaction
-                    - type: AddBalance, OrderItem
-                    - price
-                    - remainingBalance
-                    - created
+                VendingMachine o-- Item
+                Item --> InventoryLedger
+                Order --> Item
+                Order --> OrderStatus
 
      */
 }

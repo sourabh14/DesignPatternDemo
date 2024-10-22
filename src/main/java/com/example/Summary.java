@@ -85,6 +85,8 @@ public class Summary {
         Chain of responsibility:
             - lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides
                 either to process the request or to pass it to the next handler in the chain.
+            - The pattern decouples the sender of a request from its receivers,
+            - giving more than one object a chance to handle the request.
             - Eg: handling authentication requests
 
         Observer:
@@ -92,7 +94,7 @@ public class Summary {
             - Eg: a news agency notifies channels when it receives news
 
         Command:
-            - an object is used to encapsulate all information needed to perform an action or trigger an event at a later time.
+            - turns a request into a stand-alone object that contains all information about the request.
             - Rather than directly executing any request with your business logic, you will convert your request into
                 command and that command will be executed via business logic.
             - Usage: delay or queue a request’s execution, and support undo operations. Loose coupling bw request and response.
@@ -113,7 +115,9 @@ public class Summary {
             - Eg: all Collections have iterator
 
         Visitor :
-            - separates the algorithms or behaviors from the objects on which they operate
+            - add new operations to existing object structures without modifying their classes. This is achieved by
+                separating an algorithm from the objects on which it operates, allowing you to define new operations
+                externally from those objects.
             - The Visitor pattern suggests that you place the new behavior into a separate class called visitor,
                 instead of trying to integrate it into existing classes. The original object that had to perform
                 the behavior is now passed to one of the visitor’s methods as an argument, providing the method access

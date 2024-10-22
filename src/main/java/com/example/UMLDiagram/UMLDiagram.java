@@ -1,4 +1,4 @@
-package com.example.DesignPrincipleDemo.UmlDiagram;
+package com.example.UMLDiagram;
 
 public class UMLDiagram {
     /*
@@ -75,6 +75,56 @@ public class UMLDiagram {
                 - implements relationship
                 - Dashed line with triangle pointing towards Interface/Abstract class
                 - Car -------|>
+
+
+            --------------------------------------------------------------
+
+            Draw.IO class diagram
+            ---------------------
+            https://newdevsguide.com/2023/04/08/mermaid-class-diagrams/
+            Arrange -> Insert -> Advanced -> Mermaid
+
+            -- solid link
+            .. dashed link
+
+            <|-- inheritance (is-a)             Eg: Dog class inherits from the Animal class,
+            ..|> implements  (implements)       Eg: Bird class implements the Flyable interface,
+
+            *-- composition (has-a | part cannot exist without whole)   Eg: University has departments
+            o-- aggregation (has-a | part can exis)                     Eg: Department has Teachers.
+
+            --> association (uses-a )           Eg: Library and a Student are associated with each other.
+            ..> dependency                      Eg: Order class depends on PaymentService class.
+
+
+
+
+
+
+            classDiagram
+                class Vehicle {
+
+                }
+
+classDiagram
+    class GameObject {
+        -String Name
+        -int PosX
+        -int PosY
+        +Despawn() void
+    }
+    class DamageableObject {
+        +int MaxHealth
+        -int Health
+        +IsDead() bool
+        +TakeDamage(int damage) void
+        +OnKilled() void
+    }
+    GameObject <|-- DamageableObject
+
+
+
+
 
      */
 }

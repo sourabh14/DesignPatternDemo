@@ -16,18 +16,35 @@ public class DesignPrinciples {
             - Cohesion and Low Coupling
 
         Cohesion and Low Coupling:
-            - High cohesion means that a module or class has a well-defined purpose, with all its functions and
-                responsibilities closely related. It leads to more understandable, maintainable, and reusable components.
-            - Low coupling refers to minimizing dependencies between modules or classes. When modules are loosely
-                coupled, changes in one module have minimal impact on others, enhancing maintainability and flexibility.
+            - Cohesion = how closely related the responsibilities inside a single module/class are
+                - High cohesion means that a module or class has a well-defined purpose, with all its functions and
+                    responsibilities closely related.
+                - It leads to more understandable, maintainable, and reusable components.
+                - Focused responsibility - Single responsibility principle
+            - Coupling = how dependent one module/class is on another
+                - Low coupling refers to minimizing dependencies between modules or classes.
+                - When modules are loosely coupled, changes in one module have minimal impact on others, enhancing
+                    maintainability and flexibility.
+                - Minimal dependencies - Using interfaces (dependency injection) instead of concrete
+            - Benefits of high cohesion and low coupling
+                Easier to maintain
+                Easier to test
+                Easier to extend
+                Changes in one module don’t break others
 
-        Flexibility vs Complexity
-            - Factors that reduce flexibility of code
-                * Tight coupling bw components
-                * Dependencies on concrete classes instead of interfaces
-                * hardcoded operations
-            - Using design patterns we can increase flexibility and reuse of code.
-            - Trade-off is that this sometimes makes components more complex
+        Flexibility vs Complexity:
+            Flexibility is ability of code to:
+                - Adapt to changing requirements
+                - Be extended without modifying existing code (Open/Closed Principle)
+                - Support reuse across different use cases
+            Factors that Reduce Flexibility
+                - Tight Coupling: Components are highly dependent on each other. Changes in one class require changes
+                    in others
+                - Dependency on Concrete Classes - Using implementations instead of abstractions (interfaces/abstract
+                    classes). Violates Dependency Inversion Principle
+                - Hardcoded Logic / Operations: Fixed workflows, conditions, or values. Difficult to extend without
+                    modifying code
+
 
         Design Principles:
             1. Encapsulate what varies:
@@ -57,11 +74,39 @@ public class DesignPrinciples {
 
             YAGNI principle
                 - "You Aren't Gonna Need It,"
-                - Focus on Current Requirements, Avoid Over-Engineering:
+                - Focus on Current Requirements, Avoid Over-Engineering
 
             DRY principle
                 - "Don't Repeat Yourself,
                 - Avoid Redundant Code
+
+
+        Trade-offs in software design:
+            - Trade-offs in design = balancing competing factors instead of optimizing just one.
+            - There is no “perfect design” — every decision improves something while making something else worse.
+            - Whenever you design a system, you’re constantly balancing:
+                - Simplicity vs Flexibility:
+                    - Simple design is : Easy to understand, Fast to build, Hard to extend later
+                    - Flexible design is : Easy to extend, More reusable, More complex
+                    - Too simple → breaks when requirements grow. Too flexible → unnecessary complexity early
+                - Abstraction vs Readability
+                    - High Abstraction (Interfaces, factories, strategies everywhere) : Decoupled, Extensible code but
+                        Hard to trace flow, Harder debugging, Hard for new developers
+                - Performance vs Maintainability
+                    - High performance approach (Caching everywhere, Optimized queries, Custom logic:
+                        This is Fast but Hard to maintain
+                    - Premature optimization is dangerous. Optimize only when there’s a proven bottleneck
+
+         Which constraints to consider:
+                - Good engineers don’t aim for: “Best design” They aim for: “Best design for current constraints”
+                - Constraints include:
+                    Time
+                    Team size
+                    Scale
+                    Future requirements uncertainty
+
+
+
 
 
          */
